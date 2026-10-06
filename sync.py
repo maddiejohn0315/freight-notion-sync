@@ -24,7 +24,6 @@ def fetch_freight_tasks(url):
     soup = BeautifulSoup(response.text, 'html.parser')
     tasks = []
     
-    # Check standard container blocks
     task_elements = soup.find_all(['p', 'div', 'li'], class_=lambda x: x and ('task' in x or 'row' in x))
     if not task_elements:
         task_elements = soup.find_all('p')
